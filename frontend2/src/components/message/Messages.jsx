@@ -2,9 +2,11 @@ import React, { useEffect, useRef } from 'react'
 import Message from './Message'
 import useGetMessages from '../../hooks/useGetMessages'
 import { MessagesSceleton } from './MessagesSceleton'
+import useListenMessage from '../../hooks/useListenMessage'
 
 export const Messages = () => {
   const {loading, messages} = useGetMessages()
+  useListenMessage()
   const lastMessageRef = useRef()
 
   useEffect(()=>{
